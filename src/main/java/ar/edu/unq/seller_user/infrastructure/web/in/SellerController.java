@@ -1,12 +1,12 @@
-package ar.edu.unq.seller_user.infrastructure.web;
+package ar.edu.unq.seller_user.infrastructure.web.in;
 
 import ar.edu.unq.seller_user.domain.model.Seller;
 import ar.edu.unq.seller_user.domain.port.in.seller.CreateSellerUseCasePort;
 import ar.edu.unq.seller_user.domain.port.in.seller.DeleteSellerUseCasePort;
 import ar.edu.unq.seller_user.domain.port.in.seller.EditSellerUseCasePort;
-import ar.edu.unq.seller_user.infrastructure.web.dto.seller.SellerCreateDTO;
-import ar.edu.unq.seller_user.infrastructure.web.dto.seller.SellerEditDTO;
-import ar.edu.unq.seller_user.infrastructure.web.dto.seller.SellerResponseDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.seller.SellerCreateDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.seller.SellerEditDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.seller.SellerResponseDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

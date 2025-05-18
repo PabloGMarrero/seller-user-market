@@ -1,10 +1,9 @@
-package ar.edu.unq.seller_user.infrastructure.web;
+package ar.edu.unq.seller_user.infrastructure.web.in;
 
 import ar.edu.unq.seller_user.application.exceptions.EmailAlreadyInUseException;
 import ar.edu.unq.seller_user.application.exceptions.ElementNotFoundException;
-import ar.edu.unq.seller_user.domain.model.NotStockEnoughException;
-import ar.edu.unq.seller_user.infrastructure.web.dto.error.GenericErrorResponseDTO;
-import ar.edu.unq.seller_user.infrastructure.web.dto.error.ValidationErrorResponseDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.error.GenericErrorResponseDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.error.ValidationErrorResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -26,11 +25,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ElementNotFoundException.class)
     public ResponseEntity<GenericErrorResponseDTO> handleUserNotFoundException(ElementNotFoundException elementNotFoundException) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new GenericErrorResponseDTO(elementNotFoundException.getMessage()));
-    }
-
-    @ExceptionHandler(NotStockEnoughException.class)
-    public ResponseEntity<GenericErrorResponseDTO> handleNotStockEnoughException(NotStockEnoughException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new GenericErrorResponseDTO(e.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

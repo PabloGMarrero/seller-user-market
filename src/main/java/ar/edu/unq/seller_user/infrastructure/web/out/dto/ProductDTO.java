@@ -1,4 +1,4 @@
-package ar.edu.unq.seller_user.domain.model;
+package ar.edu.unq.seller_user.infrastructure.web.out.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Product {
+public class ProductDTO {
 
     private String id;
     private String name;
@@ -18,7 +18,7 @@ public class Product {
     private String sellerId;
     private Boolean deleted;
 
-    public Product(String id, String name, String description, String category, Double price, Integer stock, String sellerId) {
+    public ProductDTO(String id, String name, String description, String category, Double price, Integer stock, String sellerId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -27,19 +27,5 @@ public class Product {
         this.stock = stock;
         this.sellerId = sellerId;
         this.deleted = false;
-    }
-
-    public void markAsDeleted() {
-        this.deleted = true;
-    }
-
-    public void removeFromStock(Integer amount) {
-        Integer newStock = this.stock - amount;
-
-        if(newStock < 0){
-            throw new NotStockEnoughException(this.id);
-        }
-
-        setStock(newStock);
     }
 }

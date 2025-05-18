@@ -1,4 +1,4 @@
-package ar.edu.unq.seller_user.infrastructure.web.dto.error;
+package ar.edu.unq.seller_user.infrastructure.web.in.dto.error;
 
 import java.util.Map;
 

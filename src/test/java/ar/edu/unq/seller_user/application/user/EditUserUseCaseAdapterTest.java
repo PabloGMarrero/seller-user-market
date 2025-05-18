@@ -3,7 +3,7 @@ package ar.edu.unq.seller_user.application.user;
 import ar.edu.unq.seller_user.application.exceptions.ElementNotFoundException;
 import ar.edu.unq.seller_user.domain.model.User;
 import ar.edu.unq.seller_user.domain.port.out.UserRepositoryPort;
-import ar.edu.unq.seller_user.infrastructure.web.dto.user.UserEditDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.user.UserEditDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

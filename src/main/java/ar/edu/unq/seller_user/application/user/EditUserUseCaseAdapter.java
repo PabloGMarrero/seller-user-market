@@ -4,7 +4,7 @@ import ar.edu.unq.seller_user.application.exceptions.ElementNotFoundException;
 import ar.edu.unq.seller_user.domain.model.User;
 import ar.edu.unq.seller_user.domain.port.in.user.EditUserUseCasePort;
 import ar.edu.unq.seller_user.domain.port.out.UserRepositoryPort;
-import ar.edu.unq.seller_user.infrastructure.web.dto.user.UserEditDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.dto.user.UserEditDTO;
 import org.springframework.stereotype.Service;
 
 @Service
