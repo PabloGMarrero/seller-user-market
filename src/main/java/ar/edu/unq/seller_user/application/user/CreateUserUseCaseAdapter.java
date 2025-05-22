@@ -4,7 +4,7 @@ import ar.edu.unq.seller_user.application.exceptions.EmailAlreadyInUseException;
 import ar.edu.unq.seller_user.domain.model.User;
 import ar.edu.unq.seller_user.domain.port.in.user.CreateUserUseCasePort;
 import ar.edu.unq.seller_user.domain.port.out.UserRepositoryPort;
-import ar.edu.unq.seller_user.infrastructure.web.in.dto.user.UserCreateDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.rest.dto.user.UserCreateDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
