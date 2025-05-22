@@ -30,11 +30,6 @@ public class UserRepositoryAdapter implements UserRepositoryPort {
     }
 
     @Override
-    public Optional<User> findById(String userId) {
-        return userMongoRepository.findById(userId).map(this::generateUserFrom);
-    }
-
-    @Override
     public Optional<User> findByIdAndDeletedFalse(String sellerId) {
         return userMongoRepository.findByIdAndDeletedFalse(sellerId).map(this::generateUserFrom);
     }

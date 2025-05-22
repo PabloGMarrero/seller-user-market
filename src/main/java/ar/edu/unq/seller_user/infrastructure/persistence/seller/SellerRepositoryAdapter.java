@@ -28,11 +28,6 @@ public class SellerRepositoryAdapter implements SellerRepositoryPort {
     }
 
     @Override
-    public Optional<Seller> findById(String sellerId) {
-        return sellerMongoRepository.findById(sellerId).map(this::generateSellerFrom);
-    }
-
-    @Override
     public Optional<Seller> findByIdAndDeletedFalse(String sellerId) {
         return sellerMongoRepository.findByIdAndDeletedFalse(sellerId).map(this::generateSellerFrom);
     }
