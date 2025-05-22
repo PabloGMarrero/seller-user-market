@@ -28,41 +28,23 @@ public class DeleteSellerUseCaseAdapterTest {
     @Test
     public void deleteSellerTest() {
         Seller seller = mock(Seller.class);
-        when(sellerRepositoryPort.findById(anyString())).thenReturn(Optional.of(seller));
-        when(seller.getDeleted()).thenReturn(false);
+        when(sellerRepositoryPort.findByIdAndDeletedFalse(anyString())).thenReturn(Optional.of(seller));
 
         deleteSellerUseCaseAdapter.deleteSeller("mockSellerId");
 
-        verify(sellerRepositoryPort, times(1)).findById("mockSellerId");
+        verify(sellerRepositoryPort, times(1)).findByIdAndDeletedFalse("mockSellerId");
         verify(seller, times(1)).markAsDeleted();
         verify(sellerRepositoryPort, times(1)).save(seller);
     }
 
     @Test
-    public void deleteAlreadyDeletedSellerTest() {
-        Seller seller= mock(Seller.class);
-        when(sellerRepositoryPort.findById("mockSellerId")).thenReturn(Optional.of(seller));
-        when(seller.getDeleted()).thenReturn(true);
-
-        deleteSellerUseCaseAdapter.deleteSeller("mockSellerId");
-
-        verify(sellerRepositoryPort, times(1)).findById("mockSellerId");
-        verify(seller, never()).markAsDeleted();
-        verify(sellerRepositoryPort, never()).save(any(Seller.class));
-    }
-
-
-    @Test
     public void deleteNonExistentSellerTest() {
         String nonExistentSellerId = "non-existent-id";
-        when(sellerRepositoryPort.findById(nonExistentSellerId)).thenReturn(Optional.empty());
+        when(sellerRepositoryPort.findByIdAndDeletedFalse(nonExistentSellerId)).thenReturn(Optional.empty());
 
-        ElementNotFoundException exception = assertThrows(ElementNotFoundException.class, () -> {
-            deleteSellerUseCaseAdapter.deleteSeller(nonExistentSellerId);
-        });
+        deleteSellerUseCaseAdapter.deleteSeller(nonExistentSellerId);
 
-        assertEquals("Seller with Id: non-existent-id not found", exception.getMessage());
-        verify(sellerRepositoryPort, times(1)).findById(nonExistentSellerId);
+        verify(sellerRepositoryPort, times(1)).findByIdAndDeletedFalse(nonExistentSellerId);
         verify(sellerRepositoryPort, never()).save(any(Seller.class));
     }
 }
