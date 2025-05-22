@@ -6,7 +6,7 @@ import ar.edu.unq.seller_user.SellerServiceGrpc;
 import ar.edu.unq.seller_user.domain.model.Seller;
 import ar.edu.unq.seller_user.domain.port.in.seller.GetSellerUseCasePort;
 import io.grpc.stub.StreamObserver;
-import org.springframework.grpc.server.service.GrpcService;
+import net.devh.boot.grpc.server.service.GrpcService;
 
 @GrpcService
 public class SellerServiceGrpcImpl extends SellerServiceGrpc.SellerServiceImplBase {
