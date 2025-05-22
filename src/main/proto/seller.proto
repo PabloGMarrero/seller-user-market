@@ -13,6 +13,7 @@ message SellerGrpcRequest {
 
 message SellerGrpcResponse {
   string id = 1;
-  bool deleted = 2;
+  string companyName = 2;
+  string companyEmail = 3;
 }
 
