@@ -22,7 +22,7 @@ public class UserServiceGrpcImpl extends UserServiceGrpc.UserServiceImplBase {
 
     @Override
     public void getUserById(UserGrpcRequest request, StreamObserver<UserGrpcResponse> responseObserver) {
-        Optional<User> optionalUser = getUserUseCasePort.getSellerById(request.getId());
+        Optional<User> optionalUser = getUserUseCasePort.getUserById(request.getId());
 
         if(optionalUser.isPresent()){
             var user = optionalUser.get();
