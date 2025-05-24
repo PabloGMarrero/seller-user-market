@@ -17,7 +17,7 @@ public class GetUserUseCaseAdapter implements GetUserUseCasePort {
     }
 
     @Override
-    public Optional<User> getSellerById(String sellerId) {
-        return userRepositoryPort.findByIdAndDeletedFalse(sellerId);
+    public Optional<User> getUserById(String userId) {
+        return userRepositoryPort.findByIdAndDeletedFalse(userId);
     }
 }

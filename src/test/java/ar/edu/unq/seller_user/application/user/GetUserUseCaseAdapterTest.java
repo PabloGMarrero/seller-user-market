@@ -28,12 +28,12 @@ public class GetUserUseCaseAdapterTest {
     private UserRepositoryPort userRepositoryPort;
 
     @Test
-    public void getSellerByIdTest() {
+    public void getUserByIdTest() {
         var user = mock(User.class);
         var mockUserId = UUID.randomUUID().toString();
         when(userRepositoryPort.findByIdAndDeletedFalse(mockUserId)).thenReturn(Optional.of(user));
 
-        Optional<User> userOptional = getUserUseCaseAdapter.getSellerById(mockUserId);
+        Optional<User> userOptional = getUserUseCaseAdapter.getUserById(mockUserId);
 
         assertTrue(userOptional.isPresent());
         assertEquals(user, userOptional.get());
