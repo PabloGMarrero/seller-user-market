@@ -1,4 +1,4 @@
-package ar.edu.unq.seller_user.infrastructure.web.in.dto.seller;
+package ar.edu.unq.seller_user.infrastructure.web.in.rest.dto.seller;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;

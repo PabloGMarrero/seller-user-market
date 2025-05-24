@@ -1,9 +1,9 @@
-package ar.edu.unq.seller_user.infrastructure.web.in;
+package ar.edu.unq.seller_user.infrastructure.web.in.rest;
 
 import ar.edu.unq.seller_user.application.exceptions.EmailAlreadyInUseException;
 import ar.edu.unq.seller_user.application.exceptions.ElementNotFoundException;
-import ar.edu.unq.seller_user.infrastructure.web.in.dto.error.GenericErrorResponseDTO;
-import ar.edu.unq.seller_user.infrastructure.web.in.dto.error.ValidationErrorResponseDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.rest.dto.error.GenericErrorResponseDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.rest.dto.error.ValidationErrorResponseDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

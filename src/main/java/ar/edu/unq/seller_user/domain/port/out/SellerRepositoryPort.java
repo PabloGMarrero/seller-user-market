@@ -8,8 +8,6 @@ public interface SellerRepositoryPort {
 
     Seller save(Seller seller);
 
-    Optional<Seller> findById(String sellerId);
-
     Optional<Seller> findByIdAndDeletedFalse(String sellerId);
 
     boolean existsByCompanyEmail(String companyEmail);

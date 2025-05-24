@@ -3,7 +3,7 @@ package ar.edu.unq.seller_user.application.user;
 import ar.edu.unq.seller_user.application.exceptions.EmailAlreadyInUseException;
 import ar.edu.unq.seller_user.domain.model.User;
 import ar.edu.unq.seller_user.domain.port.out.UserRepositoryPort;
-import ar.edu.unq.seller_user.infrastructure.web.in.dto.user.UserCreateDTO;
+import ar.edu.unq.seller_user.infrastructure.web.in.rest.dto.user.UserCreateDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
